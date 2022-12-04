@@ -5,7 +5,6 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   &:not(:last-child) {
     margin-bottom: ${p => p.theme.space[2]}px;
   }

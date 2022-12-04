@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
-import Box from 'components/Box';
 import Section from 'components/Section';
 import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
 import Notification from 'components/Notification';
 
-export class App extends Component {
+import { GlobalStyle } from './GlobalStyle';
+import { Container } from './App.styled';
+
+class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  onLeaveFeedback = event => {
-    const { value } = event.target;
+  onLeaveFeedback = e => {
+    const { value } = e.target;
     return this.setState(prevState => ({
       [value]: prevState[value] + 1,
     }));
@@ -33,16 +35,7 @@ export class App extends Component {
 
     return (
       <>
-        <Box
-          display="flex"
-          flexDirection="column"
-          width="1280px"
-          height="700px"
-          pt={3}
-          bg="bodyColor"
-          boxShadow="outline"
-          as="main"
-        >
+        <Container>
           <Section title={'Please leave feedback'}>
             <FeedbackOptions
               options={Object.keys(this.state)}
@@ -62,8 +55,11 @@ export class App extends Component {
               <Notification message="There is no feedback" />
             )}
           </Section>
-        </Box>
+        </Container>
+        <GlobalStyle />
       </>
     );
   }
 }
+
+export default App;

@@ -24,7 +24,6 @@ export const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   &:hover,
   &:focus {
     background-color: ${p => p.theme.colors.secondBtnColor};

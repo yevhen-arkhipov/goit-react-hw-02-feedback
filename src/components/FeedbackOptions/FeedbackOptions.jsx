@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { ButtonList, ButtonItem, Button } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
